@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Edit Shift{% endblock %}
+{% block content %}
+    <h2>Edit Shift</h2>
+    <form method="POST">
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="{{ shift['date'] }}" required>
+
+        <label for="start_time">Start Time:</label>
+        <input type="time" name="start_time" value="{{ shift['start_time'] }}" required>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" name="end_time" value="{{ shift['end_time'] }}" required>
+
+        <label for="break_start_time">Break Start Time:</label>
+        <input type="time" name="break_start_time" value="{{ shift['break_start_time'] if shift['break_start_time'] else '' }}">
+
+        <label for="break_end_time">Break End Time:</label>
+        <input type="time" name="break_end_time" value="{{ shift['break_end_time'] if shift['break_end_time'] else '' }}">
+
+        <label for="hourly_wage_day">Day Shift Wage (¥):</label>
+        <input type="number" name="hourly_wage_day" step="0.01" value="{{ shift['hourly_wage_day'] }}" required>
+
+        <label for="hourly_wage_night">Night Shift Wage (¥):</label>
+        <input type="number" name="hourly_wage_night" step="0.01" value="{{ shift['hourly_wage_night'] }}" required>
+
+        <label for="shift_type">Shift Type:</label>
+        <select name="shift_type" required>
+            <option value="day" {% if shift['shift_type'] == 'day' %}selected{% endif %}>Day</option>
+            <option value="night" {% if shift['shift_type'] == 'night' %}selected{% endif %}>Night</option>
+            <option value="mixed" {% if shift['shift_type'] == 'mixed' %}selected{% endif %}>Mixed</option>
+        </select>
+
+        <button type="submit">Update Shift</button>
+    </form>
+{% endblock %}

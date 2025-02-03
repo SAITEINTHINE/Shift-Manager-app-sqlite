@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Add Shift{% endblock %}
+{% block content %}
+    <h2>Add Shift</h2>
+    <form method="POST">
+        <label for="date">Date:</label>
+        <input type="date" name="date" required>
+
+        <label for="start_time">Start Time:</label>
+        <input type="time" name="start_time" required>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" name="end_time" required>
+
+        <label for="break_start_time">Break Start Time:</label>
+        <input type="time" name="break_start_time">
+
+        <label for="break_end_time">Break End Time:</label>
+        <input type="time" name="break_end_time">
+
+        <label for="hourly_wage_day">Day Shift Wage (¥):</label>
+        <input type="number" name="hourly_wage_day" step="0.01" required>
+
+        <label for="hourly_wage_night">Night Shift Wage (¥):</label>
+        <input type="number" name="hourly_wage_night" step="0.01" required>
+
+        <label for="shift_type">Shift Type:</label>
+        <select name="shift_type" required>
+            <option value="day">Day</option>
+            <option value="night">Night</option>
+            <option value="mixed">Mixed</option>
+        </select>
+
+        <button type="submit">Add Shift</button>
+    </form>
+{% endblock %}

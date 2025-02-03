@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: #e4bf03;
+    padding: 10px;
+    border-radius: 5px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+form {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+button {
+    background: #17e41d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #b34500;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background: #b3ff00;
+    color: white;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Make table responsive */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+}
